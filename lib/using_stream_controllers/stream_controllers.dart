@@ -53,7 +53,6 @@ class BearStreamControllers
     checkEmail(email) && checkPassword(password)
         ? AnimationControllers.addSuccessController()
         : AnimationControllers.addFailController();
-        
   }
 
   @override
