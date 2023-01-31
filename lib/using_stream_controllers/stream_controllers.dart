@@ -24,9 +24,9 @@ class BearStreamControllers
   setEmail(String email) {
     inputEmail.add(email);
     if (email.length < 10) {
-      AnimationControllers.addLookDownLeftController();
-    } else if (email.length > 10) {
       AnimationControllers.addLookDownRightController();
+    } else if (email.length > 10) {
+      AnimationControllers.addLookDownLeftController();
     }
     log("setEmail: ");
   }

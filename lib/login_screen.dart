@@ -6,6 +6,8 @@ import 'package:login_animation/animation_controllers.dart';
 import 'package:login_animation/animation_enum.dart';
 import 'package:rive/rive.dart';
 
+import 'using_stream_controllers/register.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -15,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String email = "donia@gmail.com";
+  String email = "admin@gmail.com";
   String password = "12345678";
   final passwordFocusNode = FocusNode();
 
@@ -62,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Login Screen"),
+        title: const Text("تسجيل الدخول"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -85,20 +87,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       // height: MediaQuery.of(context).size.height / 15,
                       child: TextFormField(
                         decoration: InputDecoration(
-                            label: const Text("Email"),
+                            label: const Text("البريد الالكتروني"),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0))),
                         validator: (value) =>
-                            value != email ? "wrong email" : null,
+                            value != email ? "خطأ في البريد الألكتروني" : null,
                         onChanged: (value) {
                           if (value.isNotEmpty &&
                               value.length < 12 &&
-                              !AnimationControllers.isLookLeft) {
-                            AnimationControllers.addLookDownLeftController();
-                          } else if (value.isNotEmpty &&
-                              value.length > 12 &&
                               !AnimationControllers.isLookRight) {
                             AnimationControllers.addLookDownRightController();
+                          } else if (value.isNotEmpty &&
+                              value.length > 12 &&
+                              !AnimationControllers.isLookLeft) {
+                            AnimationControllers.addLookDownLeftController();
                           }
                         },
                       ),
@@ -112,11 +114,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: true,
                         focusNode: passwordFocusNode,
                         decoration: InputDecoration(
-                            label: const Text("Password"),
+                            label: const Text("كلمه المرور"),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0))),
                         validator: (value) =>
-                            value != password ? "wrong password" : null,
+                            value != password ? "خطأ في كلمه المرور" : null,
                       ),
                     ),
                     SizedBox(
@@ -137,9 +139,29 @@ class _LoginScreenState extends State<LoginScreen> {
                             backgroundColor: Colors.blue,
                             padding: const EdgeInsets.symmetric(vertical: 0)),
                         child: const Text(
-                          "Login",
+                          "دخول",
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        passwordFocusNode.unfocus();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => Register())));
+                      },
+                      style: TextButton.styleFrom(
+                          shape: const StadiumBorder(),
+                          backgroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 0)),
+                      child: const Text(
+                        "ليس لديك حساب؟  سجل الان",
+                        style: TextStyle(fontSize: 14, color: Colors.blue),
                       ),
                     ),
                   ],
