@@ -44,12 +44,12 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("تسجيل حساب"),
-      ),
-      body: SingleChildScrollView(
-        child: SafeArea(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("تسجيل حساب"),
+        ),
+        body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.08,

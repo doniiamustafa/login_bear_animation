@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-import 'package:login_animation/login_screen.dart';
-import 'package:login_animation/using_stream_controllers/login_screen_new.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:onboarding_screen/onboarding_screen.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-import 'using_stream_controllers/on_boarding_screens.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:login_animation/using_stream_controllers/view/on_boarding_screen.dart';
+import 'using_stream_controllers/view/on_boarding_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,26 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  @override
-  // final FlutterLocalization localization = FlutterLocalization.instance;
-  // void initState() {
-  //   localization.init(
-  //     mapLocales: [
-  //       // const MapLocale('en', AppLocale.EN),
-  //       // const MapLocale('km', AppLocale.KM),
-  //       // const MapLocale('ja', AppLocale.JA),
-  //     ],
-  //     initLanguageCode: 'ar',
-  //   );
-  //   localization.onTranslatedLanguage = _onTranslatedLanguage;
-  //   super.initState();
-  // }
-
-  // /// the setState function here is a must to add
-  // void _onTranslatedLanguage(Locale? locale) {
-  //   setState(() {});
-  // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('ar'),
       ],
-      home: OnboardingView(),
+      home: OnBoardingScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

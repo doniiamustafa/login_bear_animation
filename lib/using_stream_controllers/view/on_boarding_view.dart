@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:login_animation/login_screen.dart';
-import 'package:login_animation/using_stream_controllers/login_screen_new.dart';
+import 'package:login_animation/using_stream_controllers/view/login_view_stream_controllers.dart';
 import 'package:login_animation/using_stream_controllers/on_boarding_model.dart';
 import 'package:onboarding_screen/onboarding_screen.dart';
 
 class OnboardingView extends StatelessWidget {
-  OnboardingView({super.key});
   final PageController _controller = PageController();
   List<OnBoardingModel> mySlides = [
     OnBoardingModel(
@@ -75,7 +71,7 @@ class OnboardingView extends StatelessWidget {
         ),
         function: () {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LoginScreen()));
+              MaterialPageRoute(builder: (context) => const LoginScreenNew()));
         },
         mySlides: mySlides,
         controller: _controller,
@@ -96,3 +92,4 @@ class OnboardingView extends StatelessWidget {
     );
   }
 }
+

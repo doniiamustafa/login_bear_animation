@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:login_animation/animation_controllers.dart';
-import 'package:login_animation/using_stream_controllers/register.dart';
-import 'package:login_animation/using_stream_controllers/stream_controllers.dart';
+import 'package:login_animation/using_stream_controllers/view/register_view.dart';
+import 'package:login_animation/using_stream_controllers/stream_controllers_login.dart';
 import 'package:rive/rive.dart';
 
 class LoginScreenNew extends StatefulWidget {
@@ -57,14 +57,14 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("تسجيل الدخول"),
-        // centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: SafeArea(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text("تسجيل الدخول"),
+          // centerTitle: true,
+        ),
+        body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.08),

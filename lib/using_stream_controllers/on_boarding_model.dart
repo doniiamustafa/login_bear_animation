@@ -4,7 +4,7 @@ class OnBoardingModel {
   const OnBoardingModel({
     this.imageAssetPath,
     this.title = "title",
-    this.desc = "title",
+    this.desc = "desc",
     this.miniDescFontSize = 12.0,
     this.minTitleFontSize = 15.0,
     this.descStyle,
