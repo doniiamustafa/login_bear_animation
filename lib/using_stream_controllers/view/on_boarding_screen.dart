@@ -14,15 +14,16 @@ class OnBoardingScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: OnBoardingSlider(
+          controllerColor: Colors.grey[500],
           headerBackgroundColor: Colors.white,
-          finishButtonText: 'Login',
+          finishButtonText: 'الدخول',
           onFinish: () {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const LoginScreen()));
           },
-          skipTextButton: Text("Skip"),
+          skipTextButton: const Text("تخطي"),
 
           skipFunctionOverride: () {
             Navigator.pushReplacement(
@@ -32,17 +33,20 @@ class OnBoardingScreen extends StatelessWidget {
           },
           // trailing: Text('Skip'),
           background: [
-            SizedBox(
-                height: 400,
-                width: 400,
+            Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height * 0.6,
+                width: MediaQuery.of(context).size.width * 1,
                 child: Image.asset('assets/boarding.jpg')),
-            SizedBox(
-                height: 400,
-                width: 350,
+            Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height * 0.6,
+                width: MediaQuery.of(context).size.width * 1,
                 child: Image.asset('assets/boarding2.png')),
-            SizedBox(
-              height: 400,
-              width: 350,
+            Container(
+              color: Colors.white,
+              height: MediaQuery.of(context).size.height * 0.6,
+              width: MediaQuery.of(context).size.width * 1,
               child: Image.asset(
                 'assets/boarding3.png',
               ),
@@ -52,15 +56,16 @@ class OnBoardingScreen extends StatelessWidget {
           speed: 1.8,
           pageBodies: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.1),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const <Widget>[
+                children: <Widget>[
                   SizedBox(
-                    height: 400,
+                    height: MediaQuery.of(context).size.height * 0.54,
                   ),
-                  Text(
+                  const Text(
                     'خدماتنا الطبيه',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -70,9 +75,9 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.width * 0.06,
                   ),
-                  Text(
+                  const Text(
                     ' تستطيع القيام بالاستشاره من داخل التطبيق الخاص بنا من مكانك',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -85,15 +90,16 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.08),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const <Widget>[
+                children: <Widget>[
                   SizedBox(
-                    height: 400,
+                    height: MediaQuery.of(context).size.height * 0.54,
                   ),
-                  Text(
+                  const Text(
                     'الكشف عن المرض',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -103,9 +109,9 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.width * 0.06,
                   ),
-                  Text(
+                  const Text(
                     'تستطيع الكشف عن المرض عن طريق الأستعلام عن الأعراض',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -118,15 +124,16 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const <Widget>[
+                children: <Widget>[
                   SizedBox(
-                    height: 400,
+                    height: MediaQuery.of(context).size.height * 0.54,
                   ),
-                  Text(
+                  const Text(
                     'الثقه و الجوده',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -136,9 +143,9 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.width * 0.06,
                   ),
-                  Text(
+                  const Text(
                     'كل البيانات تكون مراجعه عن طريق أفضل الأطباء',
                     textAlign: TextAlign.center,
                     style: TextStyle(

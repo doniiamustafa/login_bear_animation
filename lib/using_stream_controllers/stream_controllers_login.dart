@@ -22,7 +22,7 @@ class BearStreamControllers
 
   @override
   setEmail(String email) {
-    AnimationControllers.addHandsDownController();
+    // AnimationControllers.addHandsDownController();
     inputEmail.add(email);
     if (email.length < 10) {
       AnimationControllers.addLookDownRightController();
