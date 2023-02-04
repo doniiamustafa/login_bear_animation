@@ -48,7 +48,23 @@ class _RegisterState extends State<Register> {
       child: Scaffold(
         backgroundColor: Colors.blue,
         appBar: AppBar(
-          title: const Text("تسجيل حساب"),
+          title: Row(
+            children: const [
+              Text(
+                "تسجيل",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              Text(
+                "حساب",
+                style: TextStyle(fontSize: 24, color: Colors.lightBlueAccent),
+              ),
+            ],
+          ),
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -57,6 +73,9 @@ class _RegisterState extends State<Register> {
                 horizontal: MediaQuery.of(context).size.width * 0.04,
                 vertical: MediaQuery.of(context).size.height * 0.02),
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0),
+              ),
               color: Colors.white,
               elevation: 4,
               child: Padding(
